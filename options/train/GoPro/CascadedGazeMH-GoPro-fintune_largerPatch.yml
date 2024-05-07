@@ -1,0 +1,106 @@
+# general settings
+name: CascadedGazeMH-GoPro-fintune_largerPatch
+model_type: MultiHeadImageRestorationModel
+scale: 1
+num_gpu: 8
+manual_seed: 10
+
+datasets:
+  train:
+    name: gopro-train
+    type: PairedImageDataset
+    dataroot_gt: ./datasets/GoPro/train/sharp_crops.lmdb
+    dataroot_lq: ./datasets/GoPro/train/blur_crops.lmdb
+
+    filename_tmpl: '{}'
+    io_backend:
+      type: lmdb
+
+    gt_size: 384
+    use_flip: true
+    use_rot: true
+
+    # data loader
+    use_shuffle: true
+    num_worker_per_gpu: 8
+    batch_size_per_gpu: 6
+    dataset_enlarge_ratio: 1
+    prefetch_mode: ~
+
+    finetune_augment: false
+
+  val:
+    name: gopro-test
+    type: PairedImageDataset
+    dataroot_gt: ./datasets/GoPro/test/target.lmdb
+    dataroot_lq: ./datasets/GoPro/test/input.lmdb
+    io_backend:
+      type: lmdb
+
+
+network_g:
+  type: GCENetMHLocal
+  width: 62
+  enc_blk_nums: [1, 1, 1, 27]
+  middle_blk_num: 1
+  dec_blk_nums: [1, 1, 1, 1]
+  n_heads: 4
+  combinate_heads: true
+
+# path
+path:
+  pretrain_network_g: # paste the trained model path here
+  strict_load_g: true
+  resume_state: ~
+
+# training settings
+train:
+  optim_g:
+    type: AdamW
+    lr: !!float 1e-5
+    weight_decay: !!float 1e-3
+    betas: [0.9, 0.9]
+
+  scheduler:
+    type: TrueCosineAnnealingLR
+    T_max: 5000
+    eta_min: !!float 1.5e-5
+
+  total_iter: 5000
+  warmup_iter: -1 # no warm up
+
+  # losses
+  pixel_opt:
+    type: MultiHeadPSNRLoss
+    loss_weight: 1
+    reduction: mean
+
+# validation settings
+val:
+  val_freq: !!float 5e2
+  save_img: false
+
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr_mh
+      crop_border: 0
+      test_y_channel: false
+    ssim:
+      type: calculate_ssim_mh
+      crop_border: 0
+      test_y_channel: false
+
+# logging settings
+logger:
+  print_freq: 200
+  save_checkpoint_freq: !!float 5e2
+  use_tb_logger: true
+  wandb:
+    project: ~
+    resume_id: ~
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500

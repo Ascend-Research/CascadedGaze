@@ -1,0 +1,55 @@
+# general settings
+name: CascadedGaze-SIDD
+model_type: ImageRestorationModel
+scale: 1
+num_gpu: 8 # set num_gpu: 0 for cpu mode
+manual_seed: 10
+
+# dataset and data loader settings
+datasets:
+
+  val:
+    name: SIDD_val
+    type: PairedImageDataset
+
+    dataroot_gt: ./datasets/SIDD/val/gt_crops.lmdb
+    dataroot_lq: ./datasets/SIDD/val/input_crops.lmdb
+
+    io_backend:
+      type: lmdb
+
+# network structures
+network_g:
+  type: CascadedGaze
+  width: 60
+  enc_blk_nums: [2, 2, 4, 6]
+  middle_blk_num: 10
+  dec_blk_nums: [2, 2, 2, 2]
+  GCE_CONVS_nums: [3,3,2,2]
+
+# path
+path:
+  pretrain_network_g: #path to the trained model weights
+  strict_load_g: true
+  resume_state: ~
+
+# validation settings
+val:
+  save_img: false
+  grids: false
+  use_image: false
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: false
+    ssim:
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: false
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500
