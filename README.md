@@ -2,6 +2,10 @@
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cascadedgaze-efficiency-in-global-context/image-denoising-on-sidd)](https://paperswithcode.com/sota/image-denoising-on-sidd?p=cascadedgaze-efficiency-in-global-context)
 
+<p align="center">
+<img src=/Visuals/denoising_output.png width=70%>
+</p>
+
 The official PyTorch implementation of the paper
 > [CascadedGaze: Efficiency in Global Context Extraction for Image Restoration](https://arxiv.org/abs/2401.15235) \
 > Amirhosein Ghasemabadi, Muhammad Kamran Janjua, Mohammad Salameh, Chunhua Zhou, Fengyu Sun, Di Niu\
