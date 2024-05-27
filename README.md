@@ -190,11 +190,15 @@ tensorboard --logdir=/CascadedGaze/logs
 # Citation
 If you use CascadedGaze, or this codebase in your work, please consider citing this work:
 ```
-@article{ghasemabadi2024cascadedgaze,
-  title={CascadedGaze: Efficiency in Global Context Extraction for Image Restoration},
-  author={Amirhosein Ghasemabadi and Muhammad Kamran Janjua and Mohammad Salameh and Chunhua Zhou and Fengyu Sun and Di Niu},
-  journal={arXiv preprint arXiv:2401.15235},
-  year={2024}
+@article{
+ghasemabadi2024cascadedgaze,
+title={CascadedGaze: Efficiency in Global Context Extraction for Image Restoration},
+author={Amirhosein Ghasemabadi and Muhammad Kamran Janjua and Mohammad Salameh and CHUNHUA ZHOU and Fengyu Sun and Di Niu},
+journal={Transactions on Machine Learning Research},
+issn={2835-8856},
+year={2024},
+url={https://openreview.net/forum?id=C3FXHxMVuq},
+note={}
 }
 ```
 
