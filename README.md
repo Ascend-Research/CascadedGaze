@@ -42,7 +42,7 @@ The implementation of Multi-Head CascadedGaze Net can be found in ```/CascadedGa
 ##  Denoising on SIDD
 ### 1. Data Preparation
 ##### Download the train set(from the SIDD dataset website) and place it in ```./datasets/SIDD/Data/```,
-##### Download the evaluation data in lmdb format (from the Gopro dataset website) and place it in ```./datasets/SIDD/test/```:
+##### Download the evaluation data in lmdb format (from the SIDD dataset website) and place it in ```./datasets/SIDD/test/```:
 #### After downloading, it should be like this:
 
 
