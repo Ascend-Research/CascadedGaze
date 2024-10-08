@@ -9,14 +9,16 @@
 We are excited to announce that our paper on **Efficient Video Restoration**, titled **Learning Truncated Causal History Model for Video Restoration** ([GitHub Repository](https://github.com/Ascend-Research/Turtle)), has been **accepted to NeurIPS 2024**! 🔥
 
 
-<p align="center">
-<img src=/Visuals/denoising_output.png width=70%>
-</p>
 
 The official PyTorch implementation of the paper
 > [CascadedGaze: Efficiency in Global Context Extraction for Image Restoration](https://arxiv.org/abs/2401.15235) \
 > Amirhosein Ghasemabadi, Muhammad Kamran Janjua, Mohammad Salameh, Chunhua Zhou, Fengyu Sun, Di Niu\
 > Accepted at Transactions on Machine Learning Research (TMLR), 2024.
+
+<p align="center">
+<img src=/Visuals/denoising_output.png width=70%>
+</p>
+
 
 ## Installation
 This implementation is based on [BasicSR](https://github.com/xinntao/BasicSR) which is an open-source toolbox for image/video restoration tasks, [NAFNet](https://github.com/megvii-research/NAFNet), [Restormer](https://github.com/swz30/Restormer/tree/main/Denoising) and [Multi Output Deblur](https://github.com/Liu-SD/multi-output-deblur)
