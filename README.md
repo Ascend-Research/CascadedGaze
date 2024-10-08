@@ -1,5 +1,10 @@
 ﻿# CascadedGaze: Efficiency in Global Context Extraction for Image Restoration
 
+## 📰 News
+
+We are excited to announce that our paper on **Efficient Video Restoration**, titled **Learning Truncated Causal History Model for Video Restoration** ([GitHub Repository](https://github.com/Ascend-Research/Turtle)), has been **accepted to NeurIPS 2024**! 🔥
+
+
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cascadedgaze-efficiency-in-global-context/image-denoising-on-sidd)](https://paperswithcode.com/sota/image-denoising-on-sidd?p=cascadedgaze-efficiency-in-global-context)
 
 <p align="center">
