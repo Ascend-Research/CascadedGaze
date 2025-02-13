@@ -6,7 +6,8 @@
 
 ## 📰 News
 
-We are excited to announce that our paper on **Efficient Video Restoration**, titled **Learning Truncated Causal History Model for Video Restoration** ([GitHub Repository](https://github.com/Ascend-Research/Turtle)), has been **accepted to NeurIPS 2024**! 🔥
+- We are excited to announce that our paper on **Efficient Video Restoration**, titled **Learning Truncated Causal History Model for Video Restoration** ([GitHub Repository](https://github.com/Ascend-Research/Turtle)), has been **accepted to NeurIPS 2024**! 🔥
+- A checkpoint for the denoising model trained on the SIDD dataset can be found here: ([Google Drive](https://drive.google.com/file/d/1Exf8LeYOjGnCLOvrA06P6UocFFmsunpQ/view?usp=sharing))
 
 
 
